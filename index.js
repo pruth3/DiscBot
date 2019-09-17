@@ -1,14 +1,10 @@
-/*{
-	"prefix": "!",
-	"token": "your-token-goes-here"
-}*/
-
 
 const Discord = require('discord.js');
+
+const config = require('./config.json');
 const clientbot = new Discord.Client();
 
-const token = 'insert token here';
-clientbot.login(token);
+clientbot.login(config.token);
 
 clientbot.on('message', msg=>{
     if (msg.content ===  "cmd"){
