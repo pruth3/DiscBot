@@ -22,6 +22,18 @@ clientbot.on('message', msg=>{
         case 'kick':
             if(!cmdArgs[1]){
                 msg.channel.send("No user specified");
+                break;
+            }
+            var kickee = msg.mentions.users.first();
+            if (!kickee){
+                msg.channel.send("Invalid user specified")
+            }
+            else{
+                var kickeeMem = msg.guild.member(kickee);
+                if (kickeeMem){
+                    kickeeMem.kick("");
+                    msg.reply(`Kicked ${kickee.tag}`);
+                }
             }
         break;
 
