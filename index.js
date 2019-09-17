@@ -1,3 +1,9 @@
+/*{
+	"prefix": "!",
+	"token": "your-token-goes-here"
+}*/
+
+
 const Discord = require('discord.js');
 const clientbot = new Discord.Client();
 
