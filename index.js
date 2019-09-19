@@ -62,14 +62,20 @@ clientbot.on('message', msg=>{
         case 'm8':
             if (!cmdArgs[1]){
                 msg.channel.send("Please ask a question")
-                break;
             }
             else{
                 var replyNum = Math.floor(Math.random() * magic8ans.length);
                 msg.reply(magic8ans[replyNum]);
+            }
+        break;
+
+        case 'dice':
+            if (!cmdArgs[1]){
+                var diceRoll = Math.floor(Math.random() * 6) + 1;
+                msg.reply("Rolled a "+diceRoll + "!");
 
             }
-
+        break;
     }
 });
 
