@@ -15,8 +15,8 @@ clientbot.on('message', msg=>{
     let cmdArgs = msg.content.substring(prefix.length).split(" ");
 
     switch(cmdArgs[0]) {
-        case 'cmd':
-            msg.reply('cmd test confirmed');
+        case 'ping':
+            msg.reply('Pong!');
         break;
 
         case 'kick':
