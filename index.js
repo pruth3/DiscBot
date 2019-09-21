@@ -86,7 +86,15 @@ clientbot.on('message', msg=>{
         case 'coinflip':
             if (!cmdArgs[1]){
                 var flip = Math.floor(Math.random() * 2) + 1;
-                msg.reply("Flipped "+flip + "!");
+                var headTails = "";
+                if (flip == 1){
+                    headTails = "heads";
+                }
+                else{
+                    headTails = "tails";
+                }
+
+                msg.reply("You flipped a "+ headTails);
 
             }
         break;
