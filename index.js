@@ -76,11 +76,25 @@ clientbot.on('message', msg=>{
 
             }
         break;
+
+        case 'randMinMax':
+            if (!cmdArgs[1] || !cmdArgs[2] || isNaN(cmdArgs[1]) || isNaN(cmdArgs[2])){
+                msg.reply("Usage: !randMinMax <min role number> <max role number>");
+            }
+        break;
+
+        case 'coinflip':
+            if (!cmdArgs[1]){
+                var flip = Math.floor(Math.random() * 2) + 1;
+                msg.reply("Flipped "+flip + "!");
+
+            }
+        break;
     }
 });
 
 
 clientbot.on('ready', ()=>{
-    console.log('Gwatch Bot is ready to go!')
+    console.log('Gwatch Bot is ready to go!');
 
 })
