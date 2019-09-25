@@ -121,6 +121,10 @@ clientbot.on('message', msg=>{
             msg.reply("Counted "+ wordCount + " word(s).");
         break;
 
+        case 'charcount':
+            var charCount = 0;
+        break;
+
     }
 });
 
