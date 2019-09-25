@@ -126,7 +126,8 @@ clientbot.on('message', msg=>{
             for (var i = 1; i < cmdArgs.length; i++){
                 charCount = charCount + 1 + cmdArgs[i].length;
             }
-            msg.reply("Counted "+ charCount + "character(s).");
+            charCount = charCount - 1;
+            msg.reply("Counted "+ charCount + " character(s).");
         break;
 
     }
