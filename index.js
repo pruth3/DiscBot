@@ -127,8 +127,47 @@ clientbot.on('message', msg=>{
             msg.reply("Counted " +charCount+" character(s).")
         break;
 
+
+        case 'picture':
+            requestImage(msg);
+        break;
+
     }
 });
+
+
+function requestImage(msg){
+    var imageInfo = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "jhin",
+        method: "GET",
+        headers:{
+            "Accept":"text/html",
+            "User-Agent":"Chrome"
+        }
+    };
+
+    request(imageInfo, function(error, response, responseBody){
+        if (error) {
+            msg.reply("something went wrong!");
+            return;
+        }
+
+        body = cheerio.load(responseBody);
+        var imageList = body(".image a.link");
+        var urls = new Array(imageList.length).fill(0).map((k, v) => imageList.eq(v).attr("href"));
+
+        if (urls.length){
+            msg.channel.send(urls[Math.floor(Math.random()*urls.length)]);
+        }
+        else{
+            msg.reply("something went wrong!");
+            return;
+        }
+
+    });
+
+}
+
 
 
 clientbot.on('ready', ()=>{
