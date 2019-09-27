@@ -131,6 +131,6 @@ clientbot.on('message', msg=>{
 
 
 clientbot.on('ready', ()=>{
-    console.log('Gwatch Bot is ready to go!');
+    console.log('oBot is ready to go!');
 
 })
