@@ -1,7 +1,8 @@
 
 const Discord = require('discord.js');
 
-
+const cheerio = require('cheerio');
+const request = require('request');
 
 const config = require('./config.json');
 const clientbot = new Discord.Client();
