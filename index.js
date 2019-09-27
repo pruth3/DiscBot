@@ -129,16 +129,23 @@ clientbot.on('message', msg=>{
 
 
         case 'picture':
-            requestImage(msg);
+            requestImage(msg, cmdArgs);
         break;
 
     }
 });
 
 
-function requestImage(msg){
+function requestImage(msg, cmdArgs){
+
+    var searchQuery = "";
+    for (i = 1; i < cmdArgs.length; i++){
+        searchQuery = searchQuery + cmdArgs[i] + "";
+    }
+    console.log(searchQuery);
+
     var imageInfo = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "jhin",
+        url: "http://results.dogpile.com/serp?qc=images&q=" + searchQuery,
         method: "GET",
         headers:{
             "Accept":"text/html",
