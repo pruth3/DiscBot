@@ -142,7 +142,6 @@ function requestImage(msg, cmdArgs){
     for (i = 1; i < cmdArgs.length; i++){
         searchQuery = searchQuery + cmdArgs[i] + " ";
     }
-    //console.log(searchQuery);
 
     var imageInfo = {
         url: "http://results.dogpile.com/serp?qc=images&q=" + searchQuery,
