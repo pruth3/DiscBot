@@ -129,6 +129,7 @@ clientbot.on('message', msg=>{
 
 
         case 'picture':
+            //external function usage for obtaining images
             requestImage(msg, cmdArgs);
         break;
 
