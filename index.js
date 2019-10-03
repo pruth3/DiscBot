@@ -134,7 +134,12 @@ clientbot.on('message', msg=>{
         break;
 
         case 'help':
-            msg.reply("help usage: !help <command>");
+            if (!cmdArgs[1]){
+                msg.reply("command parameter required! Usage: !help <command>");
+            }
+            else {
+                msg.reply("help usage: !help <command>");
+            }
         break;
         
 
