@@ -133,6 +133,11 @@ clientbot.on('message', msg=>{
             requestImage(msg, cmdArgs);
         break;
 
+        case 'help':
+            msg.reply("help usage: !help <command>");
+        break;
+        
+
     }
 });
 
